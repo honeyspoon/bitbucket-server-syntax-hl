@@ -1,5 +1,5 @@
 /* PrismJS 1.24.1
-https://prismjs.com/download.html#themes=prism&languages=clike+bash+c+cpp+python+q+r&plugins=command-line */
+https://prismjs.com/download.html#themes=prism&languages=clike+bash+c+cpp+diff+python+q+r&plugins=diff-highlight */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -141,37 +141,17 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
-.command-line-prompt {
-	border-right: 1px solid #999;
+pre.diff-highlight > code .token.deleted:not(.prefix),
+pre > code.diff-highlight .token.deleted:not(.prefix) {
+	background-color: rgba(255, 0, 0, .1);
+	color: inherit;
 	display: block;
-	float: left;
-	font-size: 100%;
-	letter-spacing: -1px;
-	margin-right: 1em;
-	pointer-events: none;
-
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 }
 
-.command-line-prompt > span:before {
-	color: #999;
-	content: ' ';
+pre.diff-highlight > code .token.inserted:not(.prefix),
+pre > code.diff-highlight .token.inserted:not(.prefix) {
+	background-color: rgba(0, 255, 128, .1);
+	color: inherit;
 	display: block;
-	padding-right: 0.8em;
-}
-
-.command-line-prompt > span[data-user]:before {
-	content: "[" attr(data-user) "@" attr(data-host) "] $";
-}
-
-.command-line-prompt > span[data-user="root"]:before {
-	content: "[" attr(data-user) "@" attr(data-host) "] #";
-}
-
-.command-line-prompt > span[data-prompt]:before {
-	content: attr(data-prompt);
 }
 
